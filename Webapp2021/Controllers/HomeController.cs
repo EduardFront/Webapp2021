@@ -12,14 +12,18 @@ namespace Webapp2021.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly TestDbContext _TestDbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, TestDbContext TestDbContext)
         {
             _logger = logger;
+            _TestDbContext = TestDbContext;
         }
 
         public IActionResult Index()
         {
+            ViewData.Model = _TestDbContext.TestsModels.OrderBy(item => item.Id).ToList();
             return View();
         }
 
