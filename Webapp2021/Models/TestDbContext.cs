@@ -12,6 +12,26 @@ namespace Webapp2021.Models
         public TestDbContext(DbContextOptions<TestDbContext> dbContextOptions) : base(dbContextOptions)
         {
             Database.EnsureCreated();
+            if (Phones.Any())
+            {
+                Phones.Add(new Phone
+                {
+                    Name = "Iphone",
+                    Model = "X",
+                    Price = "54,000 P.",
+                    Description = "Iphone X new!",
+                    isActive = true
+                });
+                Phones.Add(new Phone
+                {
+                    Name = "Iphone",
+                    Model = "Eight",
+                    Description = "Iphone 8 new!",
+                    Price = "42,000 P",
+                    isActive = false
+                });
+
+            }
         }
     }
 }

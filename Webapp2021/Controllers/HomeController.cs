@@ -23,7 +23,7 @@ namespace Webapp2021.Controllers
 
         public IActionResult Index()
         {
-            ViewData.Model = _TestDbContext.TestsModels.OrderBy(item => item.Id).ToList();
+            ViewData.Model = _TestDbContext.Phones.OrderBy(item => item.Id).ToList();
             return View();
         }
 

@@ -26,7 +26,7 @@ namespace Webapp2021
         {
             services.AddControllersWithViews();
             services.AddDbContext<Models.TestDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("Default Connection")));
+                  options.UseSqlServer(Configuration.GetConnectionString("Default Connection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
