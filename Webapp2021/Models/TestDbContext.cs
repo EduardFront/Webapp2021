@@ -30,7 +30,6 @@ namespace Webapp2021.Models
                     Price = "42,000 P",
                     IsActive = false
                 });
-
             }
         }
     }
