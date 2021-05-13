@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Webapp2021.Models;
 
 namespace Webapp2021
 {
@@ -25,7 +26,7 @@ namespace Webapp2021
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<Models.TestDbContext>(options =>
+            services.AddDbContext<TestDbContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("Default Connection")));
         }
 

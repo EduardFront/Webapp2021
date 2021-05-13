@@ -13,7 +13,7 @@ namespace Webapp2021.Models
         public string Description { get; set; }
         public DateTime Created { get; set; }
         public string Price { get; set; }
-        public bool isActive { get; set; }
+        public bool IsActive { get; set; }
  
 
     }
