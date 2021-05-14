@@ -9,6 +9,7 @@ namespace Webapp2021.Models
     public class TestDbContext:DbContext
     {
         public DbSet<Phone> Phones { get; set; }
+        public DbSet<Person> People { get; set; }
         public TestDbContext(DbContextOptions<TestDbContext> dbContextOptions) : base(dbContextOptions)
         {
             Database.EnsureCreated();

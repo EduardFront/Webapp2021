@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 namespace Webapp2021.Models
 {
     [Display(Name = "Testing")]
-    public class Phone
+    public class Phone:ModelParrent
     {
-        [Key]
-        public int Id { get; set; }
-        [Display(Name = "Имя")]
-        public string Name { get; set; }
+
+        [Display(Name = "Название")]
+        public override string Name { get => base.Name; set => base.Name = value; }
+        
         [Display(Name = "Модель")]
         public string Model { get; set; }
         [Display(Name = "Описание товара")]
         public string Description { get; set; }
         [Display(Name = "Создана")]
         public DateTime Created { get; set; }
-        //public DateTime Updated { get; set; }
+        public DateTime Updated { get; set; }
+        public virtual Person Creator { get; set; }
         [Display(Name = "Цена")]
         public string Price { get; set; }
         [Display(Name = "В наличии")]
