@@ -32,6 +32,7 @@ namespace Webapp2021.Controllers
             ViewData.Model = _TestDbContext.Phones.FirstOrDefault(i=>i.Id == id);
             return View();
         }
+        public IActionResult EditTest (int id)
         public IActionResult Privacy()
         {
             return View();

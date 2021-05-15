@@ -10,8 +10,8 @@ using Webapp2021.Models;
 namespace Webapp2021.Migrations
 {
     [DbContext(typeof(TestDbContext))]
-    [Migration("20210514144645_Add People")]
-    partial class AddPeople
+    [Migration("20210515161404_add updated in test")]
+    partial class addupdatedintest
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
