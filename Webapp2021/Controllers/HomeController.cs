@@ -29,10 +29,30 @@ namespace Webapp2021.Controllers
 
         public IActionResult GetTest(int id)
         {
-            ViewData.Model = _TestDbContext.Phones.FirstOrDefault(i=>i.Id == id);
+            ViewData.Model = _TestDbContext.Phones.FirstOrDefault(i => i.Id == id);
             return View();
         }
-        public IActionResult EditTest (int id)
+        [HttpGet]
+        public IActionResult EditTest(int id)
+        {
+            ViewData.Model = _TestDbContext.Phones.FirstOrDefault(i => i.Id == id);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult EditTest(Phone Phone)
+        {
+            var fromDB = _TestDbContext.Phones.Find(Phone.Id);
+            fromDB.IsActive = Phone.IsActive;
+            fromDB.Description = Phone.Description;
+            fromDB.Name = Phone.Name;
+            fromDB.Model = Phone.Model;
+            fromDB.Creator = Phone.Creator;
+            fromDB.Created = Phone.Created;
+            fromDB.Updated = Phone.Updated;
+            _TestDbContext.SaveChanges();
+
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
